@@ -30,15 +30,48 @@ Next state of D flip-flop is always equal to data input, D for every positive tr
 
 /* write all the steps invloved */
 
+1.Write the Verilog code for a D flip-flop that triggers on the negative edge of the clock and includes an active-low reset.
+
+2.Use an always @ (negedge Clock) block to describe flip-flop behavior.
+
+3.Inside the block, check if reset is low (!reset) to asynchronously clear Q to 0.
+
+4.If reset is high, assign the input D to output Q using non-blocking assignment (<=).
+
+5.Simulate the design using a testbench to verify reset and data capture functionality.
+
+
+
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Developed by: SANGEETHA S
+RegisterNumber:212224040287
+
+```
+module exp8(D,Clock,reset,Q);
+input D,reset,Clock;
+output reg Q;
+always @ (negedge Clock)
+if(!reset)
+Q <= 0;
+else
+Q <= D;
+endmodule
+```
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot 2025-05-25 153858](https://github.com/user-attachments/assets/4dd7d511-079d-4a8d-9a0e-5e90b063111b)
+
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![Screenshot 2025-05-25 154135](https://github.com/user-attachments/assets/908a9839-d669-4bc6-8151-0de6900d6f19)
+
+
 
 **RESULTS**
+Thus the program is verified and executed successfully.
